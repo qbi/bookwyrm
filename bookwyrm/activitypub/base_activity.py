@@ -431,6 +431,7 @@ def get_activitypub_data(url):
             headers={
                 "Accept": 'application/ld+json; profile="https://www.w3.org/ns/activitystreams"',
                 "Date": now,
+                "User-Agent": settings.USER_AGENT,
                 "Signature": make_signature("get", sender, url, now),
             },
             timeout=15,
